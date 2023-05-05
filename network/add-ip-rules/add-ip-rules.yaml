@@ -1,0 +1,21 @@
+name: add-ip-rules
+depends:
+  - service: cri
+  - network:
+      - addresses
+      - connectivity
+      - etcfiles
+container:
+  entrypoint: ./add-ip-rules
+  args:
+    - --config
+    - /usr/local/etc/add-ip-rules/config.yaml
+  mounts:
+    # config via .machine.files
+    - source: /var/etc/add-ip-rules
+      destination: /usr/local/etc/add-ip-rules
+      type: bind
+      options:
+        - bind
+        - ro
+restart: never

@@ -1,0 +1,10 @@
+version: v1alpha1
+metadata:
+  name: add-ip-rules
+  version: '$VERSION'
+  author: Zenjoy
+  description: |
+    This system extension provides a way to add IP rules to the system.
+  compatibility:
+    talos:
+      version: '>= v1.0.0'
